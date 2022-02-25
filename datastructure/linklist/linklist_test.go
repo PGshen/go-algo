@@ -1,6 +1,7 @@
 package linklist
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -28,4 +29,24 @@ func TestGetKthFromEnd(t *testing.T) {
 	listNode1 := &ListNode{1, &ListNode{4, &ListNode{9, &ListNode{Val: 20}}}}
 	printNode(listNode1)
 	printNode(getKthFromEnd(listNode1, 2))
+}
+
+// 测试 删除链表倒数第k个节点
+func TestRemoveKthFromEnd(t *testing.T) {
+	listNode1 := &ListNode{1, &ListNode{4, &ListNode{9, &ListNode{Val: 20}}}}
+	printNode(listNode1)
+	printNode(removeKthFromEnd(listNode1, 2))
+}
+
+// 测试获取链表的中间节点
+func TestMiddleNode(t *testing.T) {
+	listNode2 := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
+	printNode(listNode2)
+	printNode(middleNode(listNode2))
+}
+
+func TestHasCycle(t *testing.T) {
+	listNode2 := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
+	printNode(listNode2)
+	fmt.Println(hasCycle(listNode2))
 }
