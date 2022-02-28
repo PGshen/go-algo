@@ -52,5 +52,5 @@ func TestMergeLists() {
 	node1 := ListNode{1, &ListNode{5, &ListNode{6, &ListNode{Val: 9}}}}
 	node2 := ListNode{2, &ListNode{3, &ListNode{4, &ListNode{Val: 10}}}}
 	// printNode(mergeTwoLists1(&node1, &node2))
-	printNode(mergeTwoLists2(&node1, &node2))
+	printListNode(mergeTwoLists2(&node1, &node2))
 }
