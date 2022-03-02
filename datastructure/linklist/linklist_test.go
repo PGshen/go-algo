@@ -20,8 +20,15 @@ func TestMergeKLists(t *testing.T) {
 	listNode2 := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
 	listNode3 := &ListNode{2, &ListNode{5, &ListNode{Val: 99}}}
 
-	listNode := mergeKLists([]*ListNode{listNode1, listNode2, listNode3})
-	printListNode(listNode)
+	l1 := mergeKLists([]*ListNode{listNode1, listNode2, listNode3})
+	printListNode(l1)
+
+	listNode1 = &ListNode{1, &ListNode{4, &ListNode{9, &ListNode{Val: 20}}}}
+	listNode2 = &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
+	listNode3 = &ListNode{2, &ListNode{5, &ListNode{Val: 99}}}
+	l2 := mergeKLists2([]*ListNode{listNode1, listNode2, listNode3})
+	printListNode(l2)
+
 }
 
 // 测试 获取链表倒数第k个节点
@@ -75,7 +82,7 @@ func TestGetInterSectionNode(t *testing.T) {
 func TestReverseLinklist(t *testing.T) {
 	listNode := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
 	printListNode(listNode)
-	// printListNode(reverseLinklist(listNode))
+	printListNode(reverseLinklist(listNode))
 	printListNode(reverseLinklist2(listNode))
 }
 
@@ -83,7 +90,7 @@ func TestReverseLinklist(t *testing.T) {
 func TestReverseLinklistN(t *testing.T) {
 	listNode := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
 	printListNode(listNode)
-	// printListNode(reverseLinklistN(listNode, 3))
+	printListNode(reverseLinklistN(listNode, 3))
 	// printListNode(reverseLinklistN2(listNode, 3))
 	listNode2 := &ListNode{Val: 1, Next: nil}
 
@@ -94,7 +101,7 @@ func TestReverseLinklistN(t *testing.T) {
 func TestReverseLinklistBetween(t *testing.T) {
 	listNode := &ListNode{3, &ListNode{8, &ListNode{22, &ListNode{23, &ListNode{Val: 39}}}}}
 	printListNode(listNode)
-	// printListNode(reverseLinklistBetween(listNode, 2, 4))
+	printListNode(reverseLinklistBetween(listNode, 2, 4))
 	printListNode(reverseLinklistBetween2(listNode, 2, 4))
 }
 
@@ -114,4 +121,11 @@ func TestIsPalindrome(t *testing.T) {
 	listNode3 := &ListNode{3, &ListNode{8, &ListNode{8, &ListNode{Val: 3}}}}
 	fmt.Println(isPalindrome(listNode3))
 
+}
+
+// 测试两个链表相加
+func TestAddTwoNumbers(t *testing.T) {
+	listNode1 := &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{Val: 9}}}}}}}
+	listNode2 := &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{Val: 9}}}}
+	printListNode(addTwoNumbers(listNode1, listNode2))
 }

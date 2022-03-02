@@ -29,6 +29,7 @@ func (l *ListNodes) Push(x interface{}) {
 }
 
 // 合并k个有序链表
+// 思路： 借助堆实现
 func mergeKLists(lists []*ListNode) *ListNode {
 	listNodes := &ListNodes{}
 	heap.Init(listNodes)
@@ -48,4 +49,18 @@ func mergeKLists(lists []*ListNode) *ListNode {
 		idx = idx.Next
 	}
 	return head.Next
+}
+
+// 合并k个有序链表
+// 思路，分治+归并
+func mergeKLists2(lists []*ListNode) *ListNode {
+	length := len(lists)
+	if length == 0 {
+		return nil
+	}
+	if length == 1 {
+		return lists[0]
+	}
+	mid := length >> 1                                                          //分治
+	return mergeTwoLists1(mergeKLists2(lists[:mid]), mergeKLists2(lists[mid:])) //归并
 }
