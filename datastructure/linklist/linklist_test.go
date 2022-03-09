@@ -129,3 +129,10 @@ func TestAddTwoNumbers(t *testing.T) {
 	listNode2 := &ListNode{9, &ListNode{9, &ListNode{9, &ListNode{Val: 9}}}}
 	printListNode(addTwoNumbers(listNode1, listNode2))
 }
+
+// 测试有序链表转平衡二叉树
+func TestSortedListToBst(t *testing.T) {
+	listNode1 := &ListNode{10, &ListNode{-3, &ListNode{-1, &ListNode{0, &ListNode{2, &ListNode{5, &ListNode{Val: 9}}}}}}}
+	printListNode(listNode1)
+	printTreeNode(sortedListToBST(listNode1))
+}
