@@ -2,6 +2,7 @@ package linklist
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 )
 
@@ -19,4 +20,5 @@ func printTreeNode(treeNode *TreeNode) {
 	printTreeNode(treeNode.Left)
 	fmt.Print(strconv.Itoa(treeNode.Val) + " -> ")
 	printTreeNode(treeNode.Right)
+	rand.Intn(1)
 }

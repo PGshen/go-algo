@@ -1,4 +1,4 @@
-package main
+package container
 
 import (
 	"container/ring"
@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func TestRing() {
 	//创建10个元素的闭环
 	r := ring.New(10)
 

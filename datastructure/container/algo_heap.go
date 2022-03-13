@@ -1,4 +1,4 @@
-package main
+package container
 
 import (
 	"container/heap"
@@ -30,7 +30,7 @@ func (h *Heap) Push(x interface{}) {
 	*h = append(*h, x.(int))
 }
 
-func main_() {
+func TestHeap() {
 	h := &Heap{}
 	heap.Init(h)
 
