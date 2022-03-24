@@ -1,4 +1,4 @@
-package main
+package tree
 
 import "fmt"
 
@@ -43,7 +43,7 @@ func buildTree2(postorder []int, inorder []int) *TreeNode {
 func main() {
 	//preorder := []int{3, 9, 20, 15, 7}
 	inorder := []int{9, 3, 15, 20, 7}
-	postorder := []int{9,15,7,20,3}
+	postorder := []int{9, 15, 7, 20, 3}
 	//node := buildTree(preorder, inorder)
 	node := buildTree2(postorder, inorder)
 	fmt.Printf("%v", node)

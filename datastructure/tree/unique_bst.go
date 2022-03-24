@@ -1,9 +1,9 @@
-package main
+package tree
 
 /**
 不同的二叉搜索树
 给你一个整数 n ，求恰由 n 个节点组成且节点值从 1 到 n 互不相同的 二叉搜索树 有多少种？返回满足题意的二叉搜索树的种数。
- */
+*/
 func numTrees(n int) int {
 	// 备忘录
 	memo := make([][]int, n+1)
@@ -32,10 +32,9 @@ func numTreeRange(low, high int, memo [][]int) int {
 	return res
 }
 
-
 /**
 给你一个整数 n ，请你生成并返回所有由 n 个节点组成且节点值从 1 到 n 互不相同的不同 二叉搜索树 。可以按 任意顺序 返回答案。
- */
+*/
 func generateTrees(n int) []*TreeNode {
 	if n < 1 {
 		return []*TreeNode{}
@@ -64,4 +63,3 @@ func generate(low, high int) []*TreeNode {
 	}
 	return res
 }
-
