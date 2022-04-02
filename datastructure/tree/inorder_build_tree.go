@@ -9,7 +9,7 @@ func buildTree(preorder []int, inorder []int) *TreeNode {
 		return nil
 	}
 	index := 0
-	for i, _ := range inorder {
+	for i := range inorder {
 		if inorder[i] == preorder[0] {
 			index = i
 			break
@@ -28,7 +28,7 @@ func buildTree2(postorder []int, inorder []int) *TreeNode {
 		return nil
 	}
 	index := 0
-	for i, _ := range inorder {
+	for i := range inorder {
 		if inorder[i] == postorder[len(postorder)-1] {
 			index = i
 			break
