@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -16,4 +17,12 @@ func TestLurCache(t *testing.T) {
 	lRUCache.Get(1)    // 返回 -1 (未找到)
 	lRUCache.Get(3)    // 返回 3
 	lRUCache.Get(4)    // 返回 4
+	arr := []int{1, 2, 3}
+	test(arr)
+	fmt.Printf("%v", arr)
+}
+
+func test(arr []int) {
+	arr[0] = 100
+	arr = append(arr, 1111)
 }
