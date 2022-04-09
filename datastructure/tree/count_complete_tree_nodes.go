@@ -16,5 +16,6 @@ func countNodes(root *TreeNode) int {
 	if lh == rh {
 		return int(math.Pow(2, float64(lh))) - 1
 	}
+	// 左右子树总会有一个是完全二叉树
 	return 1 + countNodes(root.Left) + countNodes(root.Right)
 }
