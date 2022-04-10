@@ -1,4 +1,4 @@
-package main
+package graph
 
 /**
 所有可能的路径
@@ -9,7 +9,7 @@ package main
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/all-paths-from-source-to-target
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- */
+*/
 func allPathsSourceTarget(graph [][]int) [][]int {
 	var (
 		res  = [][]int{}
@@ -33,3 +33,22 @@ func allPathsSourceTarget(graph [][]int) [][]int {
 	return res
 }
 
+func allPathsSourceTarget2(graph [][]int) [][]int {
+	var (
+		res = [][]int{}
+		n   = len(graph)
+	)
+	var traverse func(int, []int)
+	traverse = func(s int, path []int) {
+		newpath := append(path, s)
+		if s == n-1 {
+			res = append(res, append([]int{}, newpath...))
+			return
+		}
+		for _, node := range graph[s] {
+			traverse(node, newpath)
+		}
+	}
+	traverse(0, []int{})
+	return res
+}
