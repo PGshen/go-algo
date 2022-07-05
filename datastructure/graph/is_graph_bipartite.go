@@ -3,9 +3,9 @@ package graph
 func isBipartite(graph [][]int) bool {
 	length := len(graph)
 	var (
-		ok      bool   = true
-		color   []bool = make([]bool, length)
-		visited []bool = make([]bool, length)
+		ok      = true
+		color   = make([]bool, length)
+		visited = make([]bool, length)
 	)
 	var traverse func([][]int, int)
 	traverse = func(graph [][]int, v int) {

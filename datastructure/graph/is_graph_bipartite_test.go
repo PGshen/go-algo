@@ -1,6 +1,9 @@
 package graph
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test_isBipartite(t *testing.T) {
 	type args struct {
@@ -25,4 +28,11 @@ func Test_isBipartite(t *testing.T) {
 			}
 		})
 	}
+}
+
+// 全局
+func TestMain(m *testing.M) {
+	fmt.Println("begin....")
+	m.Run()
+	fmt.Println("end...")
 }
